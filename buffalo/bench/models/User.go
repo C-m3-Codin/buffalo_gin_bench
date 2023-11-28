@@ -4,9 +4,6 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/gobuffalo/pop/v6"
-	"github.com/gobuffalo/validate/v3"
-	"github.com/gobuffalo/validate/v3/validators"
 	"github.com/gofrs/uuid"
 )
 
@@ -38,23 +35,23 @@ func (u Users) String() string {
 
 // Validate gets run every time you call a "pop.Validate*" (pop.ValidateAndSave, pop.ValidateAndCreate, pop.ValidateAndUpdate) method.
 // This method is not required and may be deleted.
-func (u *User) Validate(tx *pop.Connection) (*validate.Errors, error) {
-	return validate.Validate(
-		&validators.StringIsPresent{Field: u.Title, Name: "Title"},
-		&validators.StringIsPresent{Field: u.FirstName, Name: "FirstName"},
-		&validators.StringIsPresent{Field: u.LastName, Name: "LastName"},
-		&validators.StringIsPresent{Field: u.Bio, Name: "Bio"},
-	), nil
-}
+// func (u *User) Validate(tx *pop.Connection) (*validate.Errors, error) {
+// 	return validate.Validate(
+// 		&validators.StringIsPresent{Field: u.Title, Name: "Title"},
+// 		&validators.StringIsPresent{Field: u.FirstName, Name: "FirstName"},
+// 		&validators.StringIsPresent{Field: u.LastName, Name: "LastName"},
+// 		&validators.StringIsPresent{Field: u.Bio, Name: "Bio"},
+// 	), nil
+// }
 
 // ValidateCreate gets run every time you call "pop.ValidateAndCreate" method.
 // This method is not required and may be deleted.
-func (u *User) ValidateCreate(tx *pop.Connection) (*validate.Errors, error) {
-	return validate.NewErrors(), nil
-}
+// func (u *User) ValidateCreate(tx *pop.Connection) (*validate.Errors, error) {
+// 	return validate.NewErrors(), nil
+// }
 
 // ValidateUpdate gets run every time you call "pop.ValidateAndUpdate" method.
 // This method is not required and may be deleted.
-func (u *User) ValidateUpdate(tx *pop.Connection) (*validate.Errors, error) {
-	return validate.NewErrors(), nil
-}
+// func (u *User) ValidateUpdate(tx *pop.Connection) (*validate.Errors, error) {
+// 	return validate.NewErrors(), nil
+// }

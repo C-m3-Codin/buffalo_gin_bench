@@ -1,0 +1,11 @@
+version: '3'
+services:
+  db:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root_pass"
+      - "MYSQL_USER=cp"
+      - "MYSQL_PASSWORD=cp_pass"
+      - "MYSQL_DATABASE=testDb"   
